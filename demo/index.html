@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Algorithms Playground</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">GitHub Actions deployed demo</p>
+        <h1>TypeScript Algorithms Playground</h1>
+        <p class="lead">A browser demo generated from the repository on every push to main. It shows algorithm examples, expected complexity, and runnable sample inputs.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures">View repository</a>
+          <a class="button secondary" href="#playground">Run examples</a>
+        </div>
+      </section>
+      <section class="summary-grid">
+        <article class="card"><span>CI</span><h2>Quality gate</h2><p>Typecheck, lint, format check, tests, and demo build run through GitHub Actions.</p></article>
+        <article class="card"><span>TS</span><h2>Typed examples</h2><p>The demo source is TypeScript and compiled into static files during deployment.</p></article>
+        <article class="card"><span>Pages</span><h2>No manual deploy</h2><p>Pages receives the generated artifact directly from the workflow.</p></article>
+      </section>
+      <section id="playground" class="playground">
+        <div><p class="eyebrow">Playground</p><h2>Run selected algorithms</h2><p>Pick an example, adjust the input, and run it in the browser.</p></div>
+        <label for="algorithm">Example</label>
+        <select id="algorithm"></select>
+        <label for="input">Input</label>
+        <textarea id="input" rows="4"></textarea>
+        <div class="actions"><button id="run" class="button" type="button">Run</button><a id="source" class="button secondary" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/tree/main/src">Source folder</a></div>
+        <div id="details" class="details"></div>
+        <pre id="output"></pre>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
