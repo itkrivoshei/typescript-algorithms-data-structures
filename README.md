@@ -3,7 +3,9 @@
 [![CI](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml)
 [![GitHub Pages](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml)
 
-A portfolio-ready collection of classic algorithms and data structures implemented in TypeScript. The repository is structured for technical review: tests, linting, formatting, type checking, CI, Docker support, and a static GitHub Pages demo.
+A portfolio-ready collection of classic algorithms and data structures implemented in TypeScript. The
+repository is structured for technical review: tests, linting, formatting, type checking, CI, Docker
+support, and a static GitHub Pages demo.
 
 ## Live demo
 
