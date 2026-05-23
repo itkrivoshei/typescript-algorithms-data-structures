@@ -1,62 +1,88 @@
-# 🧑‍💻 OdinCodeProjects
+# TypeScript Algorithms and Data Structures
 
-Welcome to the OdinCodeProjects repository, featuring various coding projects I've developed from [The Odin Project](https://github.com/TheOdinProject). These projects are focused on different concepts in JavaScript/TypeScript.
+[![CI](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml)
+[![GitHub Pages](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml)
 
-## 🗂 Project Directory
+A portfolio-ready collection of classic algorithms and data structures implemented in TypeScript. The repository is structured for technical review: tests, linting, formatting, type checking, CI, Docker support, and a static GitHub Pages demo.
 
-Delve into the projects, each with its own challenges and learnings:
+## Live demo
 
-| Project Name           | Source Code                             | Assignment Link                                                                                            |
-| ---------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 🧪 Testing Practice    | [View Project](./src/TestingPractice)   | [View Assignment](https://www.theodinproject.com/lessons/node-path-javascript-testing-practice#assignment) |
-| 🐴 Knights Travails    | [View Project](./src/KnightsTravails)   | [View Assignment](https://www.theodinproject.com/lessons/javascript-knights-travails#assignment)           |
-| 🌳 Binary Search Trees | [View Project](./src/BinarySearchTrees) | [View Assignment](https://www.theodinproject.com/lessons/javascript-binary-search-trees#assignment)        |
-| 🗺️ HashMap             | [View Project](./src/HashMap)           | [View Assignment](https://www.theodinproject.com/lessons/javascript-hashmap#assignment)                    |
-| 🔗 LinkedLists         | [View Project](./src/LinkedLists)       | [View Assignment](https://www.theodinproject.com/lessons/javascript-linked-lists#assignment)               |
-| 🔄 Recursion           | [View Project](./src/Recursion)         | [View Assignment](https://www.theodinproject.com/lessons/javascript-recursion)                             |
+GitHub Pages demo: https://itkrivoshei.github.io/typescript-algorithms-data-structures/
 
-## 🚀 Quickstart
+## What this repository shows
 
-1. To run these projects locally:
+- TypeScript implementations of common algorithms and data structures.
+- Jest unit tests for core behaviour.
+- ESLint and Prettier configuration at the repository root.
+- GitHub Actions workflow for CI quality checks.
+- GitHub Pages workflow for a simple live demo.
+- Dockerfile for reproducible local checks.
 
-```sh
-git clone https://github.com/itkrivoshei/OdinCodeProjcts.git
+## Project structure
+
+```text
+.
+├── docs/
+├── src/
+│   ├── BinarySearchTrees/
+│   ├── HashMap/
+│   ├── KnightsTravails/
+│   ├── LinkedLists/
+│   ├── Recursion/
+│   └── TestingPractice/
+├── .github/workflows/
+├── Dockerfile
+├── jest.config.js
+├── tsconfig.json
+└── package.json
 ```
 
-3. After cloning, install the dependencies at the root of the repository:
+## Algorithms and data structures
 
-```sh
-npm i
+| Area | Folder | Notes |
+| --- | --- | --- |
+| Recursion | `src/Recursion` | Fibonacci and merge-sort style exercises |
+| Linked lists | `src/LinkedLists` | Linked list implementation and tests |
+| Hash map | `src/HashMap` | Hash map implementation and tests |
+| Binary search trees | `src/BinarySearchTrees` | Tree construction, traversal, and balancing exercises |
+| Graph search | `src/KnightsTravails` | Shortest-path style board traversal |
+| Testing practice | `src/TestingPractice` | Small functions focused on unit testing |
+
+## Quick start
+
+```bash
+git clone https://github.com/itkrivoshei/typescript-algorithms-data-structures.git
+cd typescript-algorithms-data-structures
+npm ci
+npm test
 ```
 
-3. Then, feel free to navigate to each project's directory to explore further.
+## Development commands
 
-## 🔧 Development Tools
+| Command | Purpose |
+| --- | --- |
+| `npm test` | Run Jest test suite |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run typecheck` | Run TypeScript checks without emitting files |
+| `npm run lint` | Run ESLint on the source code |
+| `npm run format` | Format files with Prettier |
+| `npm run format:check` | Check formatting in CI |
+| `npm run ci` | Run the complete local CI gate |
 
-To maintain high code quality, this repository uses:
+## Docker
 
-- 🧪 **Testing**: Jest for unit tests. See [Jest Config](.config/jest.config.json).
-  ```sh
-  npm test
-  ```
-- 🕵️ **Linting**: ESLint for code analysis. See [ESLint Config](.config/.eslintrc.json).
-  ```sh
-  npm run lint
-  ```
-- ✨ **Formatting**: Prettier for code formatting. See [Prettier Config](.config/.prettierrc).
-  ```sh
-  npm run format
-  ```
-- 🛠️ **TypeScript Config**: Ensuring type safety. See [TypeScript Config](.config/tsconfig.json).
+```bash
+docker build -t ts-algorithms .
+docker run --rm ts-algorithms
+```
 
-## ⚙️ Continuous Integration
+## CI/CD
 
-GitHub Actions are configured to perform automated checks on pushes and pull requests, running the linter, formatter, and tests as outlined in [node.js.yml](.github/workflows/node.js.yml).
+The repository uses two GitHub Actions workflows:
 
-## 📝 How to Contribute & Security
+- `CI` runs type checking, linting, formatting checks, and tests.
+- `Deploy GitHub Pages` publishes the static demo from `docs/`.
 
-Interested in contributing? Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to proceed. For security issues, refer to the [SECURITY.md](SECURITY.md) for reporting vulnerabilities.
+## License
 
-## 📄 License
-
-This repository is licensed under the [MIT License](LICENSE).
+MIT License. See [LICENSE](LICENSE).
