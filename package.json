@@ -10,9 +10,20 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "build": "npm run typecheck"
+    "build": "npm run typecheck",
+    "ci": "npm run typecheck && npm run lint && npm run format:check && npm test"
   },
-  "keywords": ["typescript", "algorithms", "data-structures", "jest", "testing", "github-actions", "ci-cd", "github-pages", "docker"],
+  "keywords": [
+    "typescript",
+    "algorithms",
+    "data-structures",
+    "jest",
+    "testing",
+    "github-actions",
+    "ci-cd",
+    "github-pages",
+    "docker"
+  ],
   "author": "Nikita Krivoshei",
   "license": "MIT",
   "engines": {
