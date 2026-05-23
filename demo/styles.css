@@ -13,7 +13,8 @@ body {
 
 .hero,
 .playground,
-.card {
+.card,
+.meta-grid > div {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #111a2e;
   border-radius: 28px;
@@ -25,7 +26,8 @@ body {
 }
 
 .eyebrow,
-.card span {
+.card span,
+.meta-grid span {
   color: #7dd3fc;
   font-weight: 800;
   text-transform: uppercase;
@@ -45,7 +47,8 @@ p,
 }
 
 .actions,
-.summary-grid {
+.summary-grid,
+.meta-grid {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -68,7 +71,8 @@ p,
   color: #edf4ff;
 }
 
-.card {
+.card,
+.meta-grid > div {
   flex: 1 1 260px;
 }
 
@@ -98,4 +102,8 @@ pre,
 pre {
   min-height: 132px;
   overflow: auto;
+}
+
+a {
+  color: #7dd3fc;
 }
