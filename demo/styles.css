@@ -1,15 +1,19 @@
 :root {
-  --bg: #0d0f14;
-  --bg-soft: #121620;
-  --panel: #171c26;
-  --panel-strong: #1d2430;
-  --line: #2a3240;
-  --text: #edf0f5;
-  --muted: #8f9aaa;
-  --accent: #9ef01a;
-  --accent-soft: rgba(158, 240, 26, 0.12);
-  --warning: #ffbf69;
-  --shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+  --bg: #111827;
+  --bg-grid: rgba(148, 163, 184, 0.08);
+  --surface: rgba(15, 23, 42, 0.88);
+  --surface-soft: #172033;
+  --surface-strong: #1e293b;
+  --line: rgba(148, 163, 184, 0.2);
+  --line-strong: rgba(129, 140, 248, 0.36);
+  --text: #f8fafc;
+  --muted: #a7b0c0;
+  --accent: #818cf8;
+  --accent-soft: rgba(129, 140, 248, 0.16);
+  --signal: #22d3ee;
+  --warning: #f59e0b;
+  --success: #34d399;
+  --shadow: 0 28px 90px rgba(2, 6, 23, 0.48);
 }
 
 * {
@@ -17,31 +21,11 @@
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
   color: var(--text);
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 16% 12%, rgba(158, 240, 26, 0.16), transparent 28%),
-    radial-gradient(circle at 84% 0%, rgba(255, 191, 105, 0.1), transparent 25%),
-    var(--bg);
-  background-size:
-    44px 44px,
-    44px 44px,
-    auto,
-    auto,
-    auto;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.28));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 18% 10%, rgba(129, 140, 248, 0.22), transparent 30%), radial-gradient(circle at 86% 8%, rgba(34, 211, 238, 0.14), transparent 28%), var(--bg);
 }
 
 .shell {
@@ -52,10 +36,10 @@ body::before {
 }
 
 .hero-layout,
-.workbench,
-.status-strip {
+.status-strip,
+.workbench {
   border: 1px solid var(--line);
-  background: rgba(18, 22, 32, 0.88);
+  background: var(--surface);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
 }
@@ -76,7 +60,7 @@ body::before {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--accent);
+  color: var(--signal);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.78rem;
   font-weight: 800;
@@ -119,8 +103,8 @@ h2 {
 
 .actions {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
   margin-top: 10px;
 }
 
@@ -128,18 +112,15 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(158, 240, 26, 0.38);
-  border-radius: 14px;
   padding: 12px 16px;
-  background: var(--accent);
-  color: #11150d;
+  color: #070b18;
   font-weight: 900;
   text-decoration: none;
   cursor: pointer;
-  transition:
-    transform 150ms ease,
-    border-color 150ms ease,
-    background 150ms ease;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--signal));
+  transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 
 .button:hover {
@@ -147,9 +128,9 @@ h2 {
 }
 
 .secondary {
-  background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   border-color: var(--line);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .pipeline-panel,
@@ -157,15 +138,15 @@ h2 {
 .result-panel,
 .meta-grid > div {
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  background: linear-gradient(180deg, var(--surface-strong), var(--surface-soft));
 }
 
 .pipeline-panel {
   display: grid;
   align-content: start;
   min-height: 320px;
-  border-radius: 24px;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .panel-header {
@@ -173,7 +154,7 @@ h2 {
   gap: 8px;
   padding: 16px;
   border-bottom: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(2, 6, 23, 0.28);
 }
 
 .panel-header span {
@@ -184,32 +165,32 @@ h2 {
 }
 
 .panel-header span:nth-child(1) {
-  background: #ff5f56;
+  background: #f97316;
 }
 
 .panel-header span:nth-child(2) {
-  background: #ffbd2e;
+  background: #f59e0b;
 }
 
 .panel-header span:nth-child(3) {
-  background: #27c93f;
+  background: var(--success);
 }
 
 .terminal-line {
   margin: 0;
   padding: 14px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #dbeafe;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  color: #d8dee9;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .terminal-line strong {
-  color: var(--warning);
   margin-right: 10px;
+  color: var(--warning);
 }
 
 .terminal-line.success {
-  color: var(--accent);
+  color: var(--success);
 }
 
 .terminal-line.muted {
@@ -255,19 +236,19 @@ h2 {
 
 .workbench-header {
   display: flex;
+  gap: 18px;
   align-items: start;
   justify-content: space-between;
-  gap: 18px;
   margin-bottom: 24px;
 }
 
 .chip {
   width: fit-content;
   padding: 9px 11px;
+  color: var(--signal);
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .workbench-grid {
@@ -279,8 +260,8 @@ h2 {
 .control-panel,
 .result-panel,
 .meta-grid > div {
-  border-radius: 22px;
   padding: 20px;
+  border-radius: 22px;
 }
 
 .control-panel {
@@ -298,18 +279,18 @@ textarea,
 pre,
 .details {
   width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 14px;
   padding: 14px;
-  background: #0b0f16;
   color: var(--text);
   font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   outline: none;
+  background: #0b1120;
 }
 
 select:focus,
 textarea:focus {
-  border-color: rgba(158, 240, 26, 0.68);
+  border-color: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
@@ -346,17 +327,17 @@ pre {
   min-height: 210px;
   margin: 0;
   overflow: auto;
-  color: #d6f8a6;
+  color: #bae6fd;
 }
 
 a {
-  color: var(--accent);
+  color: var(--signal);
 }
 
 @media (max-width: 840px) {
   .hero-layout,
-  .workbench-grid,
   .status-strip,
+  .workbench-grid,
   .meta-grid {
     grid-template-columns: 1fr;
   }
