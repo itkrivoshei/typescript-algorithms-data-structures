@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist/demo",
+    "rootDir": "demo",
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": ["demo/**/*.ts"]
+}
