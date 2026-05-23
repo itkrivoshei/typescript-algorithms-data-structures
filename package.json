@@ -1,16 +1,23 @@
 {
-  "name": "odinrecursion",
+  "name": "typescript-algorithms-data-structures",
   "version": "1.0.0",
-  "description": "A repository containing various coding projects from [The Odin Project](https://github.com/TheOdinProject), focusing on different concepts in JavaScript without web demo implementation, only code.",
-  "main": "index.js",
+  "description": "TypeScript implementations of classic algorithms and data structures with tests, CI/CD, Docker support, and a static GitHub Pages playground.",
+  "private": true,
   "scripts": {
-    "test": "jest --config .config/jest.config.json --verbose",
-    "lint": "eslint . --ext .ts --config .config/.eslintrc.json",
-    "format": "prettier --write --config .config/.prettierrc '**.{ts,md,json,js,yml}'"
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "npm run typecheck"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["typescript", "algorithms", "data-structures", "jest", "testing", "github-actions", "ci-cd", "github-pages", "docker"],
+  "author": "Nikita Krivoshei",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
