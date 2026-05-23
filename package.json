@@ -11,7 +11,7 @@
     "format:check": "prettier --check package.json tsconfig.demo.json jest.config.js .eslintrc.json .prettierrc .github/workflows/*.yml demo/**/*.css demo/**/*.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "typecheck:demo": "tsc --noEmit -p tsconfig.demo.json",
-    "build:demo": "mkdir -p dist/demo && cp demo/index.html demo/styles.css dist/demo/ && tsc -p tsconfig.demo.json",
+    "build:demo": "rm -rf dist/demo && mkdir -p dist/demo && cp demo/index.html demo/styles.css dist/demo/ && tsc -p tsconfig.demo.json",
     "build": "npm run typecheck && npm run build:demo",
     "ci": "npm run typecheck && npm run typecheck:demo && npm run lint && npm run format:check && npm test && npm run build:demo"
   },
