@@ -1,30 +1,29 @@
 # TypeScript Algorithms and Data Structures
 
-[![CI](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/node.js.yml)
-[![GitHub Pages](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/pages.yml)
+[![CI/CD](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml)
 
-A portfolio-ready collection of classic algorithms and data structures implemented in TypeScript. The
-repository is structured for technical review: tests, linting, formatting, type checking, CI, Docker
-support, and a static GitHub Pages demo.
+A portfolio-ready collection of classic algorithms and data structures implemented in TypeScript. The repository includes tests, linting, formatting, type checking, Docker support, and an automatically deployed GitHub Pages demo.
 
 ## Live demo
 
 GitHub Pages demo: https://itkrivoshei.github.io/typescript-algorithms-data-structures/
+
+The live demo is generated from the `demo/` source folder. On every push to `main`, GitHub Actions runs the full quality gate, builds `dist/demo`, and publishes the generated site to the `gh-pages` branch.
 
 ## What this repository shows
 
 - TypeScript implementations of common algorithms and data structures.
 - Jest unit tests for core behaviour.
 - ESLint and Prettier configuration at the repository root.
-- GitHub Actions workflow for CI quality checks.
-- GitHub Pages workflow for a simple live demo.
+- Unified GitHub Actions CI/CD pipeline.
+- Automated GitHub Pages deployment from generated build output.
 - Dockerfile for reproducible local checks.
 
 ## Project structure
 
 ```text
 .
-├── docs/
+├── demo/                         # Source files for the GitHub Pages demo
 ├── src/
 │   ├── BinarySearchTrees/
 │   ├── HashMap/
@@ -32,9 +31,10 @@ GitHub Pages demo: https://itkrivoshei.github.io/typescript-algorithms-data-stru
 │   ├── LinkedLists/
 │   ├── Recursion/
 │   └── TestingPractice/
-├── .github/workflows/
+├── .github/workflows/ci-cd.yml   # Quality checks and GitHub Pages deployment
 ├── Dockerfile
 ├── jest.config.js
+├── tsconfig.demo.json
 ├── tsconfig.json
 └── package.json
 ```
@@ -66,7 +66,9 @@ npm test
 | `npm test` | Run Jest test suite |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run typecheck` | Run TypeScript checks without emitting files |
-| `npm run lint` | Run ESLint on the source code |
+| `npm run typecheck:demo` | Type-check the demo source |
+| `npm run build:demo` | Generate the deployable demo in `dist/demo` |
+| `npm run lint` | Run ESLint on source and demo code |
 | `npm run format` | Format files with Prettier |
 | `npm run format:check` | Check formatting in CI |
 | `npm run ci` | Run the complete local CI gate |
@@ -80,10 +82,22 @@ docker run --rm ts-algorithms
 
 ## CI/CD
 
-The repository uses two GitHub Actions workflows:
+The repository uses a single GitHub Actions pipeline:
 
-- `CI` runs type checking, linting, formatting checks, and tests.
-- `Deploy GitHub Pages` publishes the static demo from `docs/`.
+1. Install dependencies with `npm ci`.
+2. Run TypeScript checks, ESLint, Prettier checks, Jest tests, and demo build validation.
+3. Upload the generated demo as a workflow artifact.
+4. Publish the generated demo to the `gh-pages` branch when `main` is updated.
+
+## GitHub Pages setup
+
+If the live demo URL does not update, set GitHub Pages once in the repository settings:
+
+```text
+Settings → Pages → Source: Deploy from a branch → Branch: gh-pages → Folder: /root
+```
+
+After that, every push to `main` updates the demo automatically through GitHub Actions.
 
 ## License
 
