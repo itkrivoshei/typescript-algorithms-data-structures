@@ -1,17 +1,19 @@
 {
   "name": "typescript-algorithms-data-structures",
   "version": "1.0.0",
-  "description": "TypeScript implementations of classic algorithms and data structures with tests, CI/CD, Docker support, and a static GitHub Pages playground.",
+  "description": "TypeScript implementations of classic algorithms and data structures with tests, CI/CD, Docker support, and an automatically deployed GitHub Pages playground.",
   "private": true,
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest --watch",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint src demo --ext .ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check package.json tsconfig.json jest.config.js .eslintrc.json .prettierrc .github/workflows/*.yml README.md docs/**/*.css",
+    "format:check": "prettier --check package.json tsconfig.json tsconfig.demo.json jest.config.js .eslintrc.json .prettierrc .github/workflows/*.yml README.md demo/**/*.html demo/**/*.css demo/**/*.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "build": "npm run typecheck",
-    "ci": "npm run typecheck && npm run lint && npm run format:check && npm test"
+    "typecheck:demo": "tsc --noEmit -p tsconfig.demo.json",
+    "build:demo": "rm -rf dist/demo && mkdir -p dist/demo && cp demo/index.html demo/styles.css dist/demo/ && tsc -p tsconfig.demo.json",
+    "build": "npm run typecheck && npm run build:demo",
+    "ci": "npm run typecheck && npm run typecheck:demo && npm run lint && npm run format:check && npm test && npm run build:demo"
   },
   "keywords": [
     "typescript",
