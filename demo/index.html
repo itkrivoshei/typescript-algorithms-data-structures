@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TypeScript Algorithms Showcase</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="shell">
@@ -12,27 +12,58 @@
         <div class="hero-copy">
           <p class="eyebrow">CI/CD algorithm lab</p>
           <h1>TypeScript algorithms, shipped like a small product.</h1>
-          <p class="lead">A compact playground for tested data-structure and algorithm exercises. Every change goes through GitHub Actions, builds a static artifact, and publishes it to the gh-pages branch.</p>
+          <p class="lead">
+            A compact playground for tested data-structure and algorithm exercises. Every change
+            goes through GitHub Actions, builds a static artifact, and publishes it to the
+            gh-pages branch.
+          </p>
           <div class="actions">
-            <a class="button" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures">View repository</a>
-            <a class="button secondary" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml">CI/CD workflow</a>
+            <a
+              class="button"
+              href="https://github.com/itkrivoshei/typescript-algorithms-data-structures"
+            >
+              View repository
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml"
+            >
+              CI/CD workflow
+            </a>
           </div>
         </div>
+
         <aside class="pipeline-panel" aria-label="Deployment pipeline">
-          <div class="panel-header"><span></span><span></span><span></span></div>
+          <div class="panel-header" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <p class="terminal-line muted">pipeline.yml</p>
-          <p class="terminal-line"><strong>01</strong> npm ci</p>
-          <p class="terminal-line"><strong>02</strong> typecheck · lint · test</p>
-          <p class="terminal-line"><strong>03</strong> build dist/demo</p>
-          <p class="terminal-line success"><strong>04</strong> deploy gh-pages</p>
+          <p class="terminal-line"><strong>01</strong>npm ci</p>
+          <p class="terminal-line"><strong>02</strong>typecheck · lint · test</p>
+          <p class="terminal-line"><strong>03</strong>build dist/demo</p>
+          <p class="terminal-line success"><strong>04</strong>deploy gh-pages</p>
         </aside>
       </section>
 
       <section class="status-strip" aria-label="Project status">
-        <div><span>Runtime</span><strong>Node 22</strong></div>
-        <div><span>Language</span><strong>TypeScript</strong></div>
-        <div><span>Testing</span><strong>Jest</strong></div>
-        <div><span>Delivery</span><strong>GitHub Pages</strong></div>
+        <div>
+          <span>Runtime</span>
+          <strong>Node 22</strong>
+        </div>
+        <div>
+          <span>Language</span>
+          <strong>TypeScript</strong>
+        </div>
+        <div>
+          <span>Testing</span>
+          <strong>Jest</strong>
+        </div>
+        <div>
+          <span>Delivery</span>
+          <strong>GitHub Pages</strong>
+        </div>
       </section>
 
       <section id="playground" class="workbench">
@@ -57,15 +88,29 @@
 
           <section class="result-panel" aria-label="Algorithm output">
             <p id="description" class="details"></p>
+
             <div class="meta-grid">
-              <div><span>Complexity</span><p id="complexity"></p></div>
-              <div><span>Source</span><p><a id="source-path" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures"></a></p></div>
+              <div>
+                <span>Complexity</span>
+                <p id="complexity"></p>
+              </div>
+              <div>
+                <span>Source</span>
+                <p>
+                  <a
+                    id="source-path"
+                    href="https://github.com/itkrivoshei/typescript-algorithms-data-structures"
+                  ></a>
+                </p>
+              </div>
             </div>
+
             <pre id="output"></pre>
           </section>
         </div>
       </section>
     </main>
+
     <script src="./main.js"></script>
   </body>
 </html>
