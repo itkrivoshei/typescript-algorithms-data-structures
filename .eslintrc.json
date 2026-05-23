@@ -18,14 +18,9 @@
     "project": ["./tsconfig.json", "./tsconfig.demo.json"]
   },
   "plugins": ["@typescript-eslint", "jest"],
-  "ignorePatterns": ["dist/", "node_modules/", "docs/", "src/CosineSimilarity/"],
+  "ignorePatterns": ["dist/", "node_modules/"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_"
-      }
-    ],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
