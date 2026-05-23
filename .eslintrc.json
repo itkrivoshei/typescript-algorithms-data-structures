@@ -2,7 +2,8 @@
   "env": {
     "node": true,
     "es2022": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "extends": [
     "eslint:recommended",
@@ -14,7 +15,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json", "./tsconfig.demo.json"]
   },
   "plugins": ["@typescript-eslint", "jest"],
   "ignorePatterns": ["dist/", "node_modules/", "docs/", "src/CosineSimilarity/"],
