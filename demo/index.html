@@ -8,29 +8,62 @@
   </head>
   <body>
     <main class="shell">
-      <section class="hero">
-        <p class="eyebrow">Automatically built and deployed with GitHub Actions</p>
-        <h1>TypeScript Algorithms Showcase</h1>
-        <p class="lead">This demo is built from the demo source folder on every push to main. The CI/CD pipeline validates the project first, then publishes the generated site to the gh-pages branch.</p>
-        <div class="actions">
-          <a class="button" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures">View repository</a>
-          <a class="button secondary" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml">CI/CD workflow</a>
+      <section class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">CI/CD algorithm lab</p>
+          <h1>TypeScript algorithms, shipped like a small product.</h1>
+          <p class="lead">A compact playground for tested data-structure and algorithm exercises. Every change goes through GitHub Actions, builds a static artifact, and publishes it to the gh-pages branch.</p>
+          <div class="actions">
+            <a class="button" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures">View repository</a>
+            <a class="button secondary" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml">CI/CD workflow</a>
+          </div>
         </div>
+        <aside class="pipeline-panel" aria-label="Deployment pipeline">
+          <div class="panel-header"><span></span><span></span><span></span></div>
+          <p class="terminal-line muted">pipeline.yml</p>
+          <p class="terminal-line"><strong>01</strong> npm ci</p>
+          <p class="terminal-line"><strong>02</strong> typecheck · lint · test</p>
+          <p class="terminal-line"><strong>03</strong> build dist/demo</p>
+          <p class="terminal-line success"><strong>04</strong> deploy gh-pages</p>
+        </aside>
       </section>
-      <section class="summary-grid">
-        <article class="card"><span>CI</span><h2>Quality gate</h2><p>TypeScript checks, ESLint, Prettier checks, tests, and demo build run before deployment.</p></article>
-        <article class="card"><span>Build</span><h2>Generated site</h2><p>The workflow creates the deployable site in dist/demo from the source files in demo.</p></article>
-        <article class="card"><span>CD</span><h2>Branch deployment</h2><p>The generated site is published to the gh-pages branch automatically after a successful main build.</p></article>
+
+      <section class="status-strip" aria-label="Project status">
+        <div><span>Runtime</span><strong>Node 22</strong></div>
+        <div><span>Language</span><strong>TypeScript</strong></div>
+        <div><span>Testing</span><strong>Jest</strong></div>
+        <div><span>Delivery</span><strong>GitHub Pages</strong></div>
       </section>
-      <section id="playground" class="playground">
-        <div><p class="eyebrow">Interactive playground</p><h2>Run sample algorithms</h2><p id="description" class="details"></p></div>
-        <label for="algorithm">Algorithm</label>
-        <select id="algorithm"></select>
-        <label for="input">Input</label>
-        <textarea id="input" rows="4"></textarea>
-        <button id="run" class="button" type="button">Run example</button>
-        <div class="meta-grid"><div><span>Complexity</span><p id="complexity"></p></div><div><span>Source</span><p><a id="source-path" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures"></a></p></div></div>
-        <pre id="output"></pre>
+
+      <section id="playground" class="workbench">
+        <div class="workbench-header">
+          <div>
+            <p class="eyebrow">Interactive playground</p>
+            <h2>Run an algorithm sample</h2>
+          </div>
+          <p class="chip">static artifact · no backend</p>
+        </div>
+
+        <div class="workbench-grid">
+          <section class="control-panel" aria-label="Algorithm controls">
+            <label for="algorithm">Algorithm</label>
+            <select id="algorithm"></select>
+
+            <label for="input">Input</label>
+            <textarea id="input" rows="5"></textarea>
+
+            <button id="run" class="button run-button" type="button">Run example</button>
+          </section>
+
+          <section class="result-panel" aria-label="Algorithm output">
+            <p id="description" class="details"></p>
+            <div class="meta-grid">
+              <div><span>Complexity</span><p id="complexity"></p></div>
+              <div><span>Source</span><p><a id="source-path" href="https://github.com/itkrivoshei/typescript-algorithms-data-structures"></a></p></div>
+            </div>
+            <pre id="output"></pre>
+          </section>
+        </div>
       </section>
     </main>
     <script src="./main.js"></script>
