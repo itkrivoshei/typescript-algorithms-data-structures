@@ -26,20 +26,32 @@ const parseNumbers = (value: string): number[] =>
     .map((item) => Number(item.trim()))
     .filter((item) => Number.isFinite(item));
 
+const mergeSortedLists = (left: number[], right: number[]): number[] => {
+  const result: number[] = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] <= right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  return result.concat(left.slice(leftIndex), right.slice(rightIndex));
+};
+
 const mergeSort = (items: number[]): number[] => {
   if (items.length <= 1) return items;
 
   const middle = Math.floor(items.length / 2);
   const left = mergeSort(items.slice(0, middle));
   const right = mergeSort(items.slice(middle));
-  const result: number[] = [];
 
-  while (left.length > 0 && right.length > 0) {
-    const next = left[0] <= right[0] ? left.shift() : right.shift();
-    if (next !== undefined) result.push(next);
-  }
-
-  return result.concat(left, right);
+  return mergeSortedLists(left, right);
 };
 
 const binarySearch = (items: number[], target: number): number => {
@@ -97,13 +109,21 @@ const examples: DemoExample[] = [
   },
 ];
 
-const algorithmInput = document.getElementById('algorithm') as HTMLSelectElement;
-const sampleInput = document.getElementById('input') as HTMLTextAreaElement;
-const output = document.getElementById('output') as HTMLPreElement;
-const description = document.getElementById('description') as HTMLParagraphElement;
-const sourcePath = document.getElementById('source-path') as HTMLAnchorElement;
-const complexity = document.getElementById('complexity') as HTMLParagraphElement;
-const runButton = document.getElementById('run') as HTMLButtonElement;
+const getElement = <TElement extends HTMLElement>(id: string): TElement => {
+  const element = document.getElementById(id);
+
+  if (!element) throw new Error(`Missing demo element: #${id}`);
+
+  return element as TElement;
+};
+
+const algorithmInput = getElement<HTMLSelectElement>('algorithm');
+const sampleInput = getElement<HTMLTextAreaElement>('input');
+const output = getElement<HTMLPreElement>('output');
+const description = getElement<HTMLParagraphElement>('description');
+const sourcePath = getElement<HTMLAnchorElement>('source-path');
+const complexity = getElement<HTMLParagraphElement>('complexity');
+const runButton = getElement<HTMLButtonElement>('run');
 
 const activeExample = (): DemoExample =>
   examples.find((example) => example.id === algorithmInput.value) ?? examples[0];
