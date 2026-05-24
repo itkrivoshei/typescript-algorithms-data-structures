@@ -17,11 +17,7 @@ export class BalancedBST<T extends number> {
     this.root = this.buildTreeHelper(sortedArray, 0, sortedArray.length - 1);
   }
 
-  private buildTreeHelper(
-    array: T[],
-    start: number,
-    end: number
-  ): TreeNode<T> | null {
+  private buildTreeHelper(array: T[], start: number, end: number): TreeNode<T> | null {
     if (start > end) return null;
 
     const mid = Math.floor((start + end) / 2);
@@ -41,8 +37,7 @@ export class BalancedBST<T extends number> {
     if (node === null) return new TreeNode(value);
 
     if (value < node.value) node.left = this.insertRecursive(node.left, value);
-    else if (value > node.value)
-      node.right = this.insertRecursive(node.right, value);
+    else if (value > node.value) node.right = this.insertRecursive(node.right, value);
 
     return node;
   }
@@ -51,15 +46,11 @@ export class BalancedBST<T extends number> {
     this.root = this.deleteRecursive(this.root, value);
   }
 
-  private deleteRecursive(
-    node: TreeNode<T> | null,
-    value: T
-  ): TreeNode<T> | null {
+  private deleteRecursive(node: TreeNode<T> | null, value: T): TreeNode<T> | null {
     if (node === null) return null;
 
     if (value < node.value) node.left = this.deleteRecursive(node.left, value);
-    else if (value > node.value)
-      node.right = this.deleteRecursive(node.right, value);
+    else if (value > node.value) node.right = this.deleteRecursive(node.right, value);
     else {
       if (node.left === null) return node.right;
       else if (node.right === null) return node.left;
@@ -84,10 +75,7 @@ export class BalancedBST<T extends number> {
     return this.findRecursive(this.root, value);
   }
 
-  private findRecursive(
-    node: TreeNode<T> | null,
-    value: T
-  ): TreeNode<T> | null {
+  private findRecursive(node: TreeNode<T> | null, value: T): TreeNode<T> | null {
     if (node === null || node.value === value) return node;
     else if (value < node.value) return this.findRecursive(node.left, value);
     else return this.findRecursive(node.right, value);
@@ -197,10 +185,7 @@ export class BalancedBST<T extends number> {
       depth++;
       if (node === current) break;
 
-      current =
-        node !== null && node.value < current.value
-          ? current.left
-          : current.right;
+      current = node !== null && node.value < current.value ? current.left : current.right;
     }
 
     return depth;
