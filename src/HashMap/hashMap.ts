@@ -8,17 +8,13 @@ export class HashMap<T> {
   }
 
   private hash(key: string): number {
-    const hashCode = Array.from(key).reduce(
-      (hash, char) => hash + char.charCodeAt(0),
-      0
-    );
+    const hashCode = Array.from(key).reduce((hash, char) => hash + char.charCodeAt(0), 0);
 
     return hashCode % this.bucketsSize;
   }
 
   private resizeIfNeeded(): void {
-    const loadFactorExceeded =
-      this.elementsCount / this.bucketsSize >= this.loadFactor;
+    const loadFactorExceeded = this.elementsCount / this.bucketsSize >= this.loadFactor;
 
     if (!loadFactorExceeded) return;
 
@@ -27,10 +23,7 @@ export class HashMap<T> {
 
   private resize(): void {
     const newBucketsSize = this.bucketsSize * 2;
-    const newBuckets: Array<Array<[string, T]>> = Array.from(
-      { length: newBucketsSize },
-      () => []
-    );
+    const newBuckets: Array<Array<[string, T]>> = Array.from({ length: newBucketsSize }, () => []);
 
     this.buckets.flat().forEach(([key, value]) => {
       const index = this.hash(key);
