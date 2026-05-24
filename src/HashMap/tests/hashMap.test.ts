@@ -28,6 +28,18 @@ describe('HashMap', () => {
     expect(hashMap.has('nonExistentKey')).toBe(false);
   });
 
+  test('should keep existing values accessible after resize', () => {
+    const resizedMap = new HashMap<number>(4);
+
+    Array.from({ length: 12 }, (_, index) => {
+      resizedMap.set(`key-${index}`, index);
+    });
+
+    expect(resizedMap.length()).toBe(12);
+    expect(resizedMap.get('key-0')).toBe(0);
+    expect(resizedMap.get('key-11')).toBe(11);
+  });
+
   test('should remove a key-value pair', () => {
     hashMap.set('testKey', 1);
     const result = hashMap.remove('testKey');
@@ -49,9 +61,7 @@ describe('HashMap', () => {
   test('should return all keys', () => {
     hashMap.set('testKey1', 1);
     hashMap.set('testKey2', 2);
-    expect(hashMap.keys()).toEqual(
-      expect.arrayContaining(['testKey1', 'testKey2'])
-    );
+    expect(hashMap.keys()).toEqual(expect.arrayContaining(['testKey1', 'testKey2']));
   });
 
   test('should return all values', () => {
@@ -101,8 +111,6 @@ describe('HashSet', () => {
   test('should return all keys', () => {
     hashSet.add('testKey1');
     hashSet.add('testKey2');
-    expect(hashSet.values()).toEqual(
-      expect.arrayContaining(['testKey1', 'testKey2'])
-    );
+    expect(hashSet.values()).toEqual(expect.arrayContaining(['testKey1', 'testKey2']));
   });
 });
