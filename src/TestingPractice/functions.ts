@@ -15,23 +15,15 @@ export const calculator = {
   divide: (a: number, b: number): number => a / b,
 };
 
-export function caesarCipher(str: string, shift: number): string {
-  const shiftChar = (char: string, shift: number): string => {
-    const code = char.charCodeAt(0);
+function shiftLetters(str: string, shift: number): string {
+  return str.replace(/[A-Za-z]/g, (char) => {
+    const base = char >= 'a' && char <= 'z' ? 97 : 65;
 
-    if (code >= 65 && code <= 90)
-      return String.fromCharCode(((code - 65 + shift) % 26) + 65);
-    else if (code >= 97 && code <= 122)
-      return String.fromCharCode(((code - 97 + shift) % 26) + 97);
-
-    return char;
-  };
-
-  return str
-    .split('')
-    .map((char) => shiftChar(char, shift))
-    .join('');
+    return String.fromCharCode(((char.charCodeAt(0) - base + shift) % 26) + base);
+  });
 }
+
+export const caesarCipher = shiftLetters;
 
 export function analyzeArray(arr: number[]): {
   average: number;
@@ -39,10 +31,7 @@ export function analyzeArray(arr: number[]): {
   max: number | undefined;
   length: number;
 } {
-  const average =
-    arr.length > 0
-      ? arr.reduce((acc, curr) => acc + curr, 0) / arr.length
-      : NaN;
+  const average = arr.length > 0 ? arr.reduce((acc, curr) => acc + curr, 0) / arr.length : NaN;
   const min = arr.length > 0 ? Math.min(...arr) : undefined;
   const max = arr.length > 0 ? Math.max(...arr) : undefined;
   const length = arr.length;
