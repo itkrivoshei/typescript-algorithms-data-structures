@@ -21,9 +21,7 @@ export function knightMoves(start: Position, end: Position): Position[] {
   }
 
   function bfs(start: Position, end: Position): Position[] {
-    const queue: { position: Position; path: Position[] }[] = [
-      { position: start, path: [start] },
-    ];
+    const queue: { position: Position; path: Position[] }[] = [{ position: start, path: [start] }];
     const visited: boolean[][] = Array.from({ length: boardSize }, () =>
       Array(boardSize).fill(false)
     );
@@ -35,13 +33,13 @@ export function knightMoves(start: Position, end: Position): Position[] {
       if (position.x === end.x && position.y === end.y) return path;
 
       for (const move of moves) {
-        const nextPos: Position = {
+        const nextPosition: Position = {
           x: position.x + move.x,
           y: position.y + move.y,
         };
-        if (isValid(nextPos) && !visited[nextPos.x][nextPos.y]) {
-          visited[nextPos.x][nextPos.y] = true;
-          queue.push({ position: nextPos, path: [...path, nextPos] });
+        if (isValid(nextPosition) && !visited[nextPosition.x][nextPosition.y]) {
+          visited[nextPosition.x][nextPosition.y] = true;
+          queue.push({ position: nextPosition, path: [...path, nextPosition] });
         }
       }
     }
