@@ -7,10 +7,10 @@ export class HashMap<T> {
     this.buckets = Array.from({ length: bucketsSize }, () => []);
   }
 
-  private hash(key: string): number {
+  private hash(key: string, bucketsSize = this.bucketsSize): number {
     const hashCode = Array.from(key).reduce((hash, char) => hash + char.charCodeAt(0), 0);
 
-    return hashCode % this.bucketsSize;
+    return hashCode % bucketsSize;
   }
 
   private resizeIfNeeded(): void {
@@ -26,7 +26,7 @@ export class HashMap<T> {
     const newBuckets: Array<Array<[string, T]>> = Array.from({ length: newBucketsSize }, () => []);
 
     this.buckets.flat().forEach(([key, value]) => {
-      const index = this.hash(key);
+      const index = this.hash(key, newBucketsSize);
       newBuckets[index].push([key, value]);
     });
 
