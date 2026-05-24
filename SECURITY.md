@@ -1,7 +1,9 @@
-# 🛡️ Security Policy
+# Security Policy
 
-🔄 Only the latest version of [OdinCodeProjcts](https://github.com/itkrivoshei/OdinCodeProjcts/tree/main) is eligible for security updates.
+This is a small educational algorithms repository. Only the current `main` branch is maintained.
 
-## 📝 Reporting a Vulnerability
+## Reporting a vulnerability
 
-🐛 If you discover a security issue, please report it by opening an issue with the tag "security".
+If you find a security issue, open a GitHub issue with a clear description and reproduction steps.
+
+Do not include secrets, credentials, or private user data in public reports.
