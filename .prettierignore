@@ -1,6 +1,7 @@
-node_modules/
-dist/
-coverage/
-.cache/
+node_modules
+dist
+coverage
+.cache
 .eslintcache
 .prettier-cache
+*.log
