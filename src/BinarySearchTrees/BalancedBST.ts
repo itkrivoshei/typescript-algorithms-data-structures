@@ -138,21 +138,27 @@ export class BalancedBST<T extends number> {
     if (node === null) return values;
 
     if (type === 'preOrder') {
-      callback && callback(node);
+      if (callback) {
+        callback(node);
+      }
       values.push(node.value);
     }
 
     values.push(...this.depthFirstTraversals(type, node.left, callback));
 
     if (type === 'inOrder') {
-      callback && callback(node);
+      if (callback) {
+        callback(node);
+      }
       values.push(node.value);
     }
 
     values.push(...this.depthFirstTraversals(type, node.right, callback));
 
     if (type === 'postOrder') {
-      callback && callback(node);
+      if (callback) {
+        callback(node);
+      }
       values.push(node.value);
     }
 
