@@ -8,7 +8,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint src demo --ext .ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check package.json package-lock.json tsconfig.json tsconfig.demo.json jest.config.js .eslintrc.json .prettierrc .github/workflows/*.yml scripts/**/*.mjs src/**/*.ts demo/**/*.html demo/**/*.css demo/**/*.ts demo/**/*.svg",
+    "format:check": "prettier --check package.json package-lock.json tsconfig.json tsconfig.demo.json jest.config.js .eslintrc.json .prettierrc .prettierignore .editorconfig .dockerignore .gitignore .github/**/*.yml scripts/**/*.mjs src/**/*.ts demo/**/*.html demo/**/*.css demo/**/*.ts demo/**/*.svg",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "typecheck:demo": "tsc --noEmit -p tsconfig.demo.json",
     "build:demo": "node scripts/build-demo.mjs && tsc -p tsconfig.demo.json",

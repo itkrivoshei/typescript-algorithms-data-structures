@@ -1,10 +1,4 @@
-import {
-  capitalize,
-  reverseString,
-  calculator,
-  caesarCipher,
-  analyzeArray,
-} from '../functions';
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from '../functions';
 
 describe('capitalize function', () => {
   it('should capitalize the first character of a string', () => {

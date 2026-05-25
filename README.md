@@ -36,17 +36,17 @@ npm ci
 
 ## Commands
 
-| Command | Description |
-| --- | --- |
-| `npm test` | Run the Jest test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run typecheck` | Type-check `src/` |
-| `npm run typecheck:demo` | Type-check `demo/` |
-| `npm run lint` | Run ESLint on source and demo TypeScript files |
-| `npm run format:check` | Check formatting with Prettier |
-| `npm run build:demo` | Build the static demo into `dist/demo` |
-| `npm run build` | Type-check source and build the demo |
-| `npm run ci` | Run the full local verification gate |
+| Command                  | Description                                    |
+| ------------------------ | ---------------------------------------------- |
+| `npm test`               | Run the Jest test suite                        |
+| `npm run test:watch`     | Run tests in watch mode                        |
+| `npm run typecheck`      | Type-check `src/`                              |
+| `npm run typecheck:demo` | Type-check `demo/`                             |
+| `npm run lint`           | Run ESLint on source and demo TypeScript files |
+| `npm run format:check`   | Check formatting with Prettier                 |
+| `npm run build:demo`     | Build the static demo into `dist/demo`         |
+| `npm run build`          | Type-check source and build the demo           |
+| `npm run ci`             | Run the full local verification gate           |
 
 ## Docker
 

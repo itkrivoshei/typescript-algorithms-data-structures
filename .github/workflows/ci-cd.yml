@@ -18,6 +18,7 @@ jobs:
   quality:
     name: Quality checks and demo build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -36,32 +37,26 @@ jobs:
         run: npm run ci
 
       - name: Upload demo artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: demo-site
           path: dist/demo
-          if-no-files-found: error
-          retention-days: 7
 
   deploy:
     name: Deploy demo to GitHub Pages
     needs: quality
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     permissions:
-      contents: write
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download demo artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: demo-site
-          path: dist/demo
-
-      - name: Publish demo to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/demo
-          publish_branch: gh-pages
-          force_orphan: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

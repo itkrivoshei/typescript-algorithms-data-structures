@@ -27,9 +27,7 @@ describe('knightMoves', () => {
   });
 
   it('should return the starting position for a move to the same position', () => {
-    expect(knightMoves({ x: 2, y: 2 }, { x: 2, y: 2 })).toEqual([
-      { x: 2, y: 2 },
-    ]);
+    expect(knightMoves({ x: 2, y: 2 }, { x: 2, y: 2 })).toEqual([{ x: 2, y: 2 }]);
   });
 
   it('should handle moves that would go off the board', () => {
