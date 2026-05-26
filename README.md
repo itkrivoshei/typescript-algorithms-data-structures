@@ -1,4 +1,4 @@
-# [TypeScript Algorithms and Data Structures](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
+# TypeScript Algorithms and Data Structures
 
 <p align="center">
   <a href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml"><img alt="CI/CD" src="https://img.shields.io/github/actions/workflow/status/itkrivoshei/typescript-algorithms-data-structures/ci-cd.yml?branch=main&style=flat-square&label=CI%2FCD"></a>
@@ -8,14 +8,6 @@
   <a href="https://jestjs.io/"><img alt="Jest" src="https://img.shields.io/badge/Jest-29-C21325?style=flat-square&logo=jest&logoColor=white"></a>
   <a href="./Dockerfile"><img alt="Docker" src="https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white"></a>
   <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"></a>
-</p>
-
-<p align="center">
-  <a href="./src">source</a> ·
-  <a href="./demo">demo</a> ·
-  <a href="./.github/workflows/ci-cd.yml">workflow</a> ·
-  <a href="./Dockerfile">docker</a> ·
-  <a href="./LICENSE">license</a>
 </p>
 
 TypeScript implementations of common algorithms and data structures with unit tests, static type checks, linting, formatting checks, Docker-based verification, and GitHub Actions deployment.
