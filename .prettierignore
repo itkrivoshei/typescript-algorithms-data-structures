@@ -1,7 +1,4 @@
 node_modules
 dist
 coverage
-.cache
-.eslintcache
-.prettier-cache
-*.log
+package-lock.json
