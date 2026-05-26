@@ -1,6 +1,6 @@
-# 🧪 Testing Practice Project
+# Testing Utilities
 
-Unit tests for common utility functions, following [The Odin Project's](https://github.com/TheOdinProject) Testing Practice assignment.
+Unit tests for common utility functions, following [The Odin Project's](https://github.com/TheOdinProject) testing requirements.
 
 ## 🚀 Quickstart
 
@@ -30,7 +30,7 @@ Unit tests for common utility functions, following [The Odin Project's](https://
 - `caesarCipher`: Shifts string characters by a given number.
 - `analyzeArray`: Analyzes number arrays, returning average, min, max, and length.
 
-## [📝 Assignment](https://www.theodinproject.com/lessons/node-path-javascript-testing-practice#assignment)
+## Requirements
 
 Implement and test the provided functions, ensuring each meets the outlined requirements.
 

@@ -1,59 +1,43 @@
 # TypeScript Algorithms and Data Structures
 
-<p align="center">
-  <a href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml"><img alt="CI/CD" src="https://img.shields.io/github/actions/workflow/status/itkrivoshei/typescript-algorithms-data-structures/ci-cd.yml?branch=main&style=flat-square&label=CI%2FCD"></a>
-  <a href="https://itkrivoshei.github.io/typescript-algorithms-data-structures/"><img alt="Live demo" src="https://img.shields.io/badge/demo-GitHub%20Pages-222222?style=flat-square&logo=githubpages&logoColor=white"></a>
-  <a href="https://www.typescriptlang.org/"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white"></a>
-  <a href="https://nodejs.org/"><img alt="Node.js" src="https://img.shields.io/badge/Node.js-%E2%89%A522.13-339933?style=flat-square&logo=nodedotjs&logoColor=white"></a>
-  <a href="https://jestjs.io/"><img alt="Jest" src="https://img.shields.io/badge/Jest-29-C21325?style=flat-square&logo=jest&logoColor=white"></a>
-  <a href="./Dockerfile"><img alt="Docker" src="https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white"></a>
-  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"></a>
-</p>
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/itkrivoshei/typescript-algorithms-data-structures/ci-cd.yml?branch=main&style=flat-square&label=ci%2Fcd&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml)
+[![Playground](https://img.shields.io/badge/playground-GitHub%20Pages-222?style=flat-square&logo=githubpages&logoColor=white)](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript&logoColor=white)](package.json)
+[![Jest](https://img.shields.io/badge/Jest-29-c21325?style=flat-square&logo=jest&logoColor=white)](jest.config.js)
+[![Docker](https://img.shields.io/badge/Docker-verification-2496ed?style=flat-square&logo=docker&logoColor=white)](Dockerfile)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-TypeScript implementations of common algorithms and data structures with unit tests, static type checks, linting, formatting checks, Docker-based verification, and GitHub Actions deployment.
+## [Open Playground ->](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
 
-## Live demo
+TypeScript implementations of common algorithms and data structures with Jest tests, linting, formatting checks, a static browser playground, and CI/CD.
 
-The static playground is deployed from GitHub Actions to GitHub Pages:
+## Library Surface
 
-**[Open the demo](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)**
+| Area                | Source                  | Coverage                                              |
+| ------------------- | ----------------------- | ----------------------------------------------------- |
+| Binary search trees | `src/BinarySearchTrees` | insert, delete, traversals, balance checks, rebalance |
+| Hash map / hash set | `src/HashMap`           | set/get/remove/resize, key/value/entry views          |
+| Linked list         | `src/LinkedLists`       | append, prepend, find, insert, remove, stringify      |
+| Knight path search  | `src/KnightsTravails`   | BFS shortest path on an 8x8 board                     |
+| Recursion           | `src/Recursion`         | Fibonacci variants and merge sort                     |
+| Test functions      | `src/TestingPractice`   | small utility functions with Jest tests               |
 
-## What is included
+`src/CosineSimilarity/CosineSimilarity.cpp` is a standalone C++ file and is outside the TypeScript build.
 
-- Algorithm and data-structure implementations in [`src/`](./src)
-- Jest tests colocated with implementation folders
-- Static demo source in [`demo/`](./demo)
-- Demo build helper in [`scripts/build-demo.mjs`](./scripts/build-demo.mjs)
-- CI/CD workflow in [`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)
-- Optional Docker verification with [`Dockerfile`](./Dockerfile)
+## Browser Playground
 
-## Implementations
+The Pages playground is generated from `demo/` into `dist/demo`.
 
-| Area                | Source                                             |
-| ------------------- | -------------------------------------------------- |
-| Binary search trees | [`src/BinarySearchTrees`](./src/BinarySearchTrees) |
-| Hash map            | [`src/HashMap`](./src/HashMap)                     |
-| Linked lists        | [`src/LinkedLists`](./src/LinkedLists)             |
-| Knight's Travails   | [`src/KnightsTravails`](./src/KnightsTravails)     |
-| Recursion exercises | [`src/Recursion`](./src/Recursion)                 |
-| Testing practice    | [`src/TestingPractice`](./src/TestingPractice)     |
+Open: https://itkrivoshei.github.io/typescript-algorithms-data-structures/
 
-## Tech stack
+It includes runnable examples for Fibonacci, merge sort, and binary search, with source links back into the repository.
 
-| Layer     | Tools                                 |
-| --------- | ------------------------------------- |
-| Language  | TypeScript                            |
-| Runtime   | Node.js 22+                           |
-| Testing   | Jest, ts-jest                         |
-| Quality   | ESLint, Prettier, TypeScript compiler |
-| CI/CD     | GitHub Actions, GitHub Pages          |
-| Container | Docker                                |
-
-## Getting started
+## Local Setup
 
 ```bash
 git clone https://github.com/itkrivoshei/typescript-algorithms-data-structures.git
 cd typescript-algorithms-data-structures
+nvm use
 npm ci
 ```
 
@@ -61,60 +45,27 @@ npm ci
 
 | Command                  | Description                            |
 | ------------------------ | -------------------------------------- |
-| `npm test`               | Run the Jest test suite                |
-| `npm run test:watch`     | Run tests in watch mode                |
-| `npm run typecheck`      | Type-check the main TypeScript source  |
-| `npm run typecheck:demo` | Type-check the static demo source      |
-| `npm run lint`           | Run ESLint on `src/` and `demo/`       |
-| `npm run format:check`   | Check formatting with Prettier         |
-| `npm run build:demo`     | Build the static demo into `dist/demo` |
-| `npm run build`          | Type-check source and build the demo   |
-| `npm run ci`             | Run the full local verification gate   |
+| `npm test`               | Run Jest tests                         |
+| `npm run test:watch`     | Run Jest in watch mode                 |
+| `npm run typecheck`      | Type-check main source                 |
+| `npm run typecheck:demo` | Type-check playground source           |
+| `npm run lint`           | Run ESLint over `src` and `demo`       |
+| `npm run format:check`   | Check Prettier formatting              |
+| `npm run build:demo`     | Build `dist/demo`                      |
+| `npm run build`          | Type-check source and build playground |
+| `npm run ci`             | Run the full verification gate         |
 
-## Docker
-
-The Docker image runs the same verification gate as CI.
+## Docker Verification
 
 ```bash
 docker build -t ts-algorithms .
 docker run --rm ts-algorithms
 ```
 
-## CI/CD
+## Automation
 
-The repository uses one GitHub Actions workflow:
-
-1. Install dependencies with `npm ci`.
-2. Run type checks, linting, formatting checks, tests, and demo build validation.
-3. On pushes to `main`, build the demo into `dist/demo`.
-4. Upload the generated artifact.
-5. Deploy the artifact to GitHub Pages from Actions.
-
-Workflow file: [`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)
-
-## Project structure
-
-```text
-.
-├── demo/                         # Static demo source
-├── scripts/                      # Build helper scripts
-├── src/                          # Algorithms, data structures, and tests
-├── .github/dependabot.yml        # Dependabot configuration
-├── .github/workflows/ci-cd.yml   # CI checks and GitHub Pages deployment
-├── Dockerfile                    # Optional containerized verification
-├── eslint.config.mjs             # ESLint flat config
-├── jest.config.js                # Jest configuration
-├── tsconfig.demo.json            # Demo TypeScript config
-├── tsconfig.json                 # Main TypeScript config
-└── package.json                  # Scripts and dev dependencies
-```
-
-## Notes
-
-[`src/CosineSimilarity/CosineSimilarity.cpp`](./src/CosineSimilarity/CosineSimilarity.cpp) is a standalone C++ exercise and is not part of the TypeScript build or test pipeline.
+`.github/workflows/ci-cd.yml` installs dependencies, runs `npm run ci`, builds the playground on pushes to `main`, and deploys `dist/demo` to GitHub Pages. Dependabot updates npm packages and GitHub Actions.
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
-
-## How to run\n\n1. Install dependencies: \n\n npm install\n\n2. Start:\n\n npm start\n
+[MIT](LICENSE)
