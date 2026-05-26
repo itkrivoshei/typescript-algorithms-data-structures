@@ -10,3 +10,13 @@ coverage/
 .eslintcache
 .prettier-cache
 .DS_Store
+build/
+.env.local
+.vscode/
+__pycache__/
+*.pyc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pytest_cache/
+.idea/
