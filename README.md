@@ -116,3 +116,5 @@ Workflow file: [`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## How to run\n\n1. Install dependencies: \n\n   npm install\n\n2. Start:\n\n   npm start\n
