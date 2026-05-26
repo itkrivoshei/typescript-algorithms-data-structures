@@ -29,25 +29,25 @@ The static playground is deployed from GitHub Actions to GitHub Pages:
 
 ## Implementations
 
-| Area | Source |
-| --- | --- |
+| Area                | Source                                             |
+| ------------------- | -------------------------------------------------- |
 | Binary search trees | [`src/BinarySearchTrees`](./src/BinarySearchTrees) |
-| Hash map | [`src/HashMap`](./src/HashMap) |
-| Linked lists | [`src/LinkedLists`](./src/LinkedLists) |
-| Knight's Travails | [`src/KnightsTravails`](./src/KnightsTravails) |
-| Recursion exercises | [`src/Recursion`](./src/Recursion) |
-| Testing practice | [`src/TestingPractice`](./src/TestingPractice) |
+| Hash map            | [`src/HashMap`](./src/HashMap)                     |
+| Linked lists        | [`src/LinkedLists`](./src/LinkedLists)             |
+| Knight's Travails   | [`src/KnightsTravails`](./src/KnightsTravails)     |
+| Recursion exercises | [`src/Recursion`](./src/Recursion)                 |
+| Testing practice    | [`src/TestingPractice`](./src/TestingPractice)     |
 
 ## Tech stack
 
-| Layer | Tools |
-| --- | --- |
-| Language | TypeScript |
-| Runtime | Node.js 22+ |
-| Testing | Jest, ts-jest |
-| Quality | ESLint, Prettier, TypeScript compiler |
-| CI/CD | GitHub Actions, GitHub Pages |
-| Container | Docker |
+| Layer     | Tools                                 |
+| --------- | ------------------------------------- |
+| Language  | TypeScript                            |
+| Runtime   | Node.js 22+                           |
+| Testing   | Jest, ts-jest                         |
+| Quality   | ESLint, Prettier, TypeScript compiler |
+| CI/CD     | GitHub Actions, GitHub Pages          |
+| Container | Docker                                |
 
 ## Getting started
 
@@ -59,17 +59,17 @@ npm ci
 
 ## Commands
 
-| Command | Description |
-| --- | --- |
-| `npm test` | Run the Jest test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run typecheck` | Type-check the main TypeScript source |
-| `npm run typecheck:demo` | Type-check the static demo source |
-| `npm run lint` | Run ESLint on `src/` and `demo/` |
-| `npm run format:check` | Check formatting with Prettier |
-| `npm run build:demo` | Build the static demo into `dist/demo` |
-| `npm run build` | Type-check source and build the demo |
-| `npm run ci` | Run the full local verification gate |
+| Command                  | Description                            |
+| ------------------------ | -------------------------------------- |
+| `npm test`               | Run the Jest test suite                |
+| `npm run test:watch`     | Run tests in watch mode                |
+| `npm run typecheck`      | Type-check the main TypeScript source  |
+| `npm run typecheck:demo` | Type-check the static demo source      |
+| `npm run lint`           | Run ESLint on `src/` and `demo/`       |
+| `npm run format:check`   | Check formatting with Prettier         |
+| `npm run build:demo`     | Build the static demo into `dist/demo` |
+| `npm run build`          | Type-check source and build the demo   |
+| `npm run ci`             | Run the full local verification gate   |
 
 ## Docker
 
