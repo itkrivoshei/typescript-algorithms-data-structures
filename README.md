@@ -7,8 +7,6 @@
 [![Docker](https://img.shields.io/badge/Docker-verification-2496ed?style=flat-square&logo=docker&logoColor=white)](Dockerfile)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-## [Open Playground ->](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
-
 TypeScript implementations of common algorithms and data structures with Jest tests, linting, formatting checks, a static browser playground, and CI/CD.
 
 ## Library Surface
@@ -27,8 +25,6 @@ TypeScript implementations of common algorithms and data structures with Jest te
 ## Browser Playground
 
 The Pages playground is generated from `demo/` into `dist/demo`.
-
-Open: https://itkrivoshei.github.io/typescript-algorithms-data-structures/
 
 It includes runnable examples for Fibonacci, merge sort, and binary search, with source links back into the repository.
 
