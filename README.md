@@ -1,32 +1,63 @@
-# TypeScript Algorithms and Data Structures
+# [TypeScript Algorithms and Data Structures](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
 
-[![CI/CD](https://img.shields.io/github/actions/workflow/status/itkrivoshei/typescript-algorithms-data-structures/ci-cd.yml?branch=main&style=flat-square&label=CI%2FCD)](https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?style=flat-square)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A522-339933?style=flat-square)](https://nodejs.org/)
-[![Demo](https://img.shields.io/badge/GitHub%20Pages-demo-222?style=flat-square)](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+<p align="center">
+  <a href="https://github.com/itkrivoshei/typescript-algorithms-data-structures/actions/workflows/ci-cd.yml"><img alt="CI/CD" src="https://img.shields.io/github/actions/workflow/status/itkrivoshei/typescript-algorithms-data-structures/ci-cd.yml?branch=main&style=flat-square&label=CI%2FCD"></a>
+  <a href="https://itkrivoshei.github.io/typescript-algorithms-data-structures/"><img alt="Live demo" src="https://img.shields.io/badge/demo-GitHub%20Pages-222222?style=flat-square&logo=githubpages&logoColor=white"></a>
+  <a href="https://www.typescriptlang.org/"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white"></a>
+  <a href="https://nodejs.org/"><img alt="Node.js" src="https://img.shields.io/badge/Node.js-%E2%89%A522.13-339933?style=flat-square&logo=nodedotjs&logoColor=white"></a>
+  <a href="https://jestjs.io/"><img alt="Jest" src="https://img.shields.io/badge/Jest-29-C21325?style=flat-square&logo=jest&logoColor=white"></a>
+  <a href="./Dockerfile"><img alt="Docker" src="https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white"></a>
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"></a>
+</p>
 
-TypeScript implementations of common algorithms and data structures with tests, CI checks, Docker support, and a static GitHub Pages demo.
+<p align="center">
+  <a href="./src">source</a> ·
+  <a href="./demo">demo</a> ·
+  <a href="./.github/workflows/ci-cd.yml">workflow</a> ·
+  <a href="./Dockerfile">docker</a> ·
+  <a href="./LICENSE">license</a>
+</p>
+
+TypeScript implementations of common algorithms and data structures with unit tests, static type checks, linting, formatting checks, Docker-based verification, and GitHub Actions deployment.
+
+## Live demo
+
+The static playground is deployed from GitHub Actions to GitHub Pages:
+
+**[Open the demo](https://itkrivoshei.github.io/typescript-algorithms-data-structures/)**
+
+## What is included
+
+- Algorithm and data-structure implementations in [`src/`](./src)
+- Jest tests colocated with implementation folders
+- Static demo source in [`demo/`](./demo)
+- Demo build helper in [`scripts/build-demo.mjs`](./scripts/build-demo.mjs)
+- CI/CD workflow in [`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)
+- Optional Docker verification with [`Dockerfile`](./Dockerfile)
+
+## Implementations
+
+| Area | Source |
+| --- | --- |
+| Binary search trees | [`src/BinarySearchTrees`](./src/BinarySearchTrees) |
+| Hash map | [`src/HashMap`](./src/HashMap) |
+| Linked lists | [`src/LinkedLists`](./src/LinkedLists) |
+| Knight's Travails | [`src/KnightsTravails`](./src/KnightsTravails) |
+| Recursion exercises | [`src/Recursion`](./src/Recursion) |
+| Testing practice | [`src/TestingPractice`](./src/TestingPractice) |
 
 ## Tech stack
 
-- TypeScript
-- Jest / ts-jest
-- ESLint
-- Prettier
-- GitHub Actions
-- GitHub Pages
-- Docker
+| Layer | Tools |
+| --- | --- |
+| Language | TypeScript |
+| Runtime | Node.js 22+ |
+| Testing | Jest, ts-jest |
+| Quality | ESLint, Prettier, TypeScript compiler |
+| CI/CD | GitHub Actions, GitHub Pages |
+| Container | Docker |
 
-## Scope
-
-- Data structures and algorithms under `src/`
-- Unit tests colocated in `tests/` folders
-- Static demo source under `demo/`
-- Reproducible local verification through `npm run ci`
-- Optional Docker-based verification
-
-## Installation
+## Getting started
 
 ```bash
 git clone https://github.com/itkrivoshei/typescript-algorithms-data-structures.git
@@ -36,44 +67,25 @@ npm ci
 
 ## Commands
 
-| Command                  | Description                                    |
-| ------------------------ | ---------------------------------------------- |
-| `npm test`               | Run the Jest test suite                        |
-| `npm run test:watch`     | Run tests in watch mode                        |
-| `npm run typecheck`      | Type-check `src/`                              |
-| `npm run typecheck:demo` | Type-check `demo/`                             |
-| `npm run lint`           | Run ESLint on source and demo TypeScript files |
-| `npm run format:check`   | Check formatting with Prettier                 |
-| `npm run build:demo`     | Build the static demo into `dist/demo`         |
-| `npm run build`          | Type-check source and build the demo           |
-| `npm run ci`             | Run the full local verification gate           |
+| Command | Description |
+| --- | --- |
+| `npm test` | Run the Jest test suite |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run typecheck` | Type-check the main TypeScript source |
+| `npm run typecheck:demo` | Type-check the static demo source |
+| `npm run lint` | Run ESLint on `src/` and `demo/` |
+| `npm run format:check` | Check formatting with Prettier |
+| `npm run build:demo` | Build the static demo into `dist/demo` |
+| `npm run build` | Type-check source and build the demo |
+| `npm run ci` | Run the full local verification gate |
 
 ## Docker
+
+The Docker image runs the same verification gate as CI.
 
 ```bash
 docker build -t ts-algorithms .
 docker run --rm ts-algorithms
-```
-
-The Docker image runs the same verification command as CI:
-
-```bash
-npm run ci
-```
-
-## Project structure
-
-```text
-.
-├── demo/                         # Static demo source
-├── scripts/                      # Small build helper scripts
-├── src/                          # Algorithms, data structures, and tests
-├── .github/workflows/ci-cd.yml   # Quality checks and GitHub Pages deployment
-├── Dockerfile
-├── jest.config.js
-├── tsconfig.demo.json
-├── tsconfig.json
-└── package.json
 ```
 
 ## CI/CD
@@ -82,21 +94,33 @@ The repository uses one GitHub Actions workflow:
 
 1. Install dependencies with `npm ci`.
 2. Run type checks, linting, formatting checks, tests, and demo build validation.
-3. Upload the generated demo as a workflow artifact.
-4. Deploy `dist/demo` to the `gh-pages` branch on pushes to `main`.
+3. On pushes to `main`, build the demo into `dist/demo`.
+4. Upload the generated artifact.
+5. Deploy the artifact to GitHub Pages from Actions.
 
-## Live demo
+Workflow file: [`.github/workflows/ci-cd.yml`](./.github/workflows/ci-cd.yml)
 
-GitHub Pages:
+## Project structure
 
 ```text
-https://itkrivoshei.github.io/typescript-algorithms-data-structures/
+.
+├── demo/                         # Static demo source
+├── scripts/                      # Build helper scripts
+├── src/                          # Algorithms, data structures, and tests
+├── .github/dependabot.yml        # Dependabot configuration
+├── .github/workflows/ci-cd.yml   # CI checks and GitHub Pages deployment
+├── Dockerfile                    # Optional containerized verification
+├── eslint.config.mjs             # ESLint flat config
+├── jest.config.js                # Jest configuration
+├── tsconfig.demo.json            # Demo TypeScript config
+├── tsconfig.json                 # Main TypeScript config
+└── package.json                  # Scripts and dev dependencies
 ```
 
 ## Notes
 
-`src/CosineSimilarity/CosineSimilarity.cpp` is a standalone C++ exercise and is not part of the TypeScript build or test pipeline.
+[`src/CosineSimilarity/CosineSimilarity.cpp`](./src/CosineSimilarity/CosineSimilarity.cpp) is a standalone C++ exercise and is not part of the TypeScript build or test pipeline.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
